@@ -1,24 +1,24 @@
-# Core requirements
-opencv-python>=4.6.0
-numpy>=1.20.0,<1.21.0  # Avoid versions with Python compatibility issues
-matplotlib>=3.5.0
+# Fix for setuptools error
+setuptools>=65.5.0
+wheel>=0.37.1
+pip>=22.0.0
 
-# MediaPipe options (try these alternatives if one fails)
-mediapipe>=0.8.9.1; python_version < '3.11'  # More lenient version requirement
-# mediapipe-silicon; python_version >= '3.11'  # Alternative for newer Python
+# Core libraries
+opencv-python-headless==4.8.0.74  # Use headless version for cloud deployment
+numpy==1.24.3
+matplotlib==3.7.1
 
-# For deployment
-gunicorn>=20.1.0
-flask>=2.0.0
+# MediaPipe - version compatible with cloud environments
+mediapipe-silicon==0.10.5
 
-# Common data processing
-pandas>=1.3.0
-scikit-learn>=1.0.0
+# Web framework
+flask==2.2.3
+gunicorn==20.1.0
 
-# For audio processing (if needed)
-librosa>=0.9.0
+# Data processing
+pandas==1.5.3
+scikit-learn==1.2.2
 
-# For visualization
-seaborn>=0.11.0
-
-# Add any other project-specific requirements here
+# Other dependencies as needed
+librosa==0.10.0
+seaborn==0.12.2
