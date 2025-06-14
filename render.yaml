@@ -2,9 +2,8 @@ services:
   - type: web
     name: non-verbal-analysis
     env: python
-    pythonVersion: 3.9.18  # Use a stable Python version for MediaPipe
-    buildCommand: bash ./build.sh
+    buildCommand: chmod +x build_render.sh && ./build_render.sh
     startCommand: gunicorn app:app
     envVars:
       - key: PYTHON_VERSION
-        value: 3.9.18
+        value: 3.9
