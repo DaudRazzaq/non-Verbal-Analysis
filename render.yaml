@@ -1,9 +1,10 @@
 services:
   - type: web
-    name: your-app-name
+    name: non-verbal-analysis
     env: python
-    buildCommand: pip install --upgrade pip setuptools wheel && apt-get update && apt-get install -y ffmpeg libsm6 libxext6 && pip install -r requirements.txt
+    pythonVersion: 3.9.18  # Use a stable Python version for MediaPipe
+    buildCommand: bash ./build.sh
     startCommand: gunicorn app:app
     envVars:
       - key: PYTHON_VERSION
-        value: 3.9.16
+        value: 3.9.18
