@@ -1,24 +1,20 @@
-# Fix for setuptools error
-setuptools>=65.5.0
-wheel>=0.37.1
-pip>=22.0.0
+# Core dependencies
+setuptools==68.0.0
+wheel>=0.40.0
+pip>=23.0.0
 
-# Core libraries
-opencv-python-headless==4.8.0.74  # Use headless version for cloud deployment
+# Use OpenCV headless version for deployment
+opencv-python-headless==4.8.0.74
+
+# Core data libraries
 numpy==1.24.3
+pandas==1.5.3
 matplotlib==3.7.1
 
-# MediaPipe - version compatible with cloud environments
-mediapipe-silicon==0.10.5
+# For MediaPipe, use a pre-built package
+opencv-contrib-python-headless==4.8.0.74
+protobuf>=3.20.0,<4.0.0
 
 # Web framework
 flask==2.2.3
 gunicorn==20.1.0
-
-# Data processing
-pandas==1.5.3
-scikit-learn==1.2.2
-
-# Other dependencies as needed
-librosa==0.10.0
-seaborn==0.12.2
