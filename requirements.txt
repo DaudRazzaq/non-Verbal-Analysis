@@ -1,8 +1,23 @@
-flask==3.0.2
-flask-cors==5.0.0
-opencv-python==4.10.0.84
-mediapipe>=0.10.0,<0.11.0
-numpy==1.24.3
-werkzeug==3.1.3
-deepface==0.0.79
-gunicorn==21.2.0
+# Core libraries
+opencv-python>=4.6.0
+numpy>=1.20.0
+matplotlib>=3.5.0
+
+# MediaPipe - use a version available for both Windows and Linux
+mediapipe==0.10.5
+
+# For deployment
+gunicorn>=20.1.0
+flask>=2.0.0
+
+# Common data processing
+pandas>=1.3.0
+scikit-learn>=1.0.0
+
+# For audio processing (if needed)
+librosa>=0.9.0
+
+# For visualization
+seaborn>=0.11.0
+
+# Add any other project-specific requirements here
