@@ -1,10 +1,11 @@
-# Core libraries
+# Core requirements
 opencv-python>=4.6.0
-numpy>=1.20.0
+numpy>=1.20.0,<1.21.0  # Avoid versions with Python compatibility issues
 matplotlib>=3.5.0
 
-# MediaPipe - use a version available for both Windows and Linux
-mediapipe==0.10.5
+# MediaPipe options (try these alternatives if one fails)
+mediapipe>=0.8.9.1; python_version < '3.11'  # More lenient version requirement
+# mediapipe-silicon; python_version >= '3.11'  # Alternative for newer Python
 
 # For deployment
 gunicorn>=20.1.0
