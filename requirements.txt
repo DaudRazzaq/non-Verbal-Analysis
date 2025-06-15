@@ -8,8 +8,8 @@ pandas==1.5.3
 matplotlib==3.6.3
 scipy==1.9.3
 
-# MediaPipe for computer vision
-mediapipe==0.9.3.0
+# MediaPipe for computer vision - using a stable version for Python 3.9
+mediapipe==0.10.5
 
 # Web framework
 flask==2.2.3
@@ -27,5 +27,3 @@ plotly==5.17.0
 # Utilities
 pillow==9.5.0
 requests==2.28.2
-
-# Add any other dependencies your app.py imports
