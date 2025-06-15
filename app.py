@@ -9,6 +9,7 @@ import logging
 from datetime import datetime
 import json
 from typing import Tuple, Dict, Any
+import os
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -362,6 +363,18 @@ class InterviewReporter:
 detector = CheatingDetector()
 reporter = InterviewReporter()
 
+@app.route('/')
+def home():
+    return jsonify({
+        'status': 'Non-Verbal Analysis API is running!', 
+        'version': '1.0',
+        'endpoints': ['/analyze', '/interview/end', '/reports', '/health']
+    })
+
+@app.route('/health')
+def health():
+    return jsonify({'status': 'healthy', 'mediapipe': 'loaded'})
+
 @app.route('/analyze', methods=['POST'])
 def analyze():
     start_time = time.time()
@@ -447,4 +460,9 @@ def get_report(report_id):
     return jsonify({"error": "Report not found"}), 404
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    # Get port from environment variable or default to 5000
+    port = int(os.environ.get('PORT', 5000))
+    # Set debug=False for production
+    debug_mode = os.environ.get('FLASK_ENV') == 'development'
+    
+    app.run(host='0.0.0.0', port=port, debug=debug_mode)
