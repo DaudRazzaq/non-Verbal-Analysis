@@ -1,0 +1,6 @@
+# Try these MediaPipe versions if 0.9.3.0 fails
+mediapipe==0.10.5
+# or
+mediapipe==0.8.11
+# or  
+mediapipe==0.10.0
