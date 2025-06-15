@@ -2,8 +2,9 @@ services:
   - type: web
     name: non-verbal-analysis
     env: python
-    buildCommand: chmod +x build_render.sh && ./build_render.sh
-    startCommand: gunicorn app:app
+    pythonVersion: "3.9"
+    buildCommand: "pip install --upgrade pip && pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
     envVars:
       - key: PYTHON_VERSION
-        value: 3.9
+        value: "3.9"
